@@ -1,11 +1,11 @@
-# ZoomAttendance_Pipeline
+# ZoomAttendance_Pipeline for Avengers (student names are replaced with Avengers names for privacy purposes)
 Use Zoom Attendance Reports (CSVs) (from Canvas) to (1) calculate the number of absences and (2) convert into format used for visualizations (e.g., heatmap)
 
 The goal here is to produce an attendance report for the whole semester, 
 -calculating the number of minutes each student attends per lecture, 
 -calculating the number of days absent throughout the entire semester
 
-# Code takes the input csv's and produce 1 aggregated output
+# Code takes input csv's and produce 1 aggregated output
 
 ## Input-
 Downloaded Zoom Reports (CSV) are automatically saved under the same name - there is no need to re-name these since this code will aggregate the CSV's. 
@@ -24,5 +24,3 @@ Since the aggregates data are relatively clean, you may not have to do much down
 For my purposes here, I used the output CSV into Tableau to produce a heatmap (rows = student names, columns = lecture date, 'cells' show the time (minutes) students spent in each class).
 I find this visualization easy to interpret as you can easily see which students are absent each day. 
 
-
-# ZoomAttendance_Avengers
