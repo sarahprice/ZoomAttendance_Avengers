@@ -27,8 +27,8 @@ Extract:
   
 Transform:
 * The Zoom reports are then aggregated into a single dataframe.
-* Attendance for each student is collapsed, having 1 student entry per day. If a student has multiple records in a single day, the time per session is summed to report the total minutes in attendance per day. If a student is not present during the day, the reported time is 0. 
-* To calculate total absences, the number of sessions with 0 minutes is considered an absence.
+* Attendance for each student is collapsed, having 1 student entry per day. If a student has multiple records in a single day, the time per session is summed to report the total minutes in attendance per day. If a student is not present during the day, the reported time is null (NaN). 
+* To calculate total absences, the number of sessions with null (NaN) minutes is considered an absence.
 * To measure the total number of absences for the entire semester, the number of absences is counted. The structure of this dataframe has student names (rows) and dates of attendance (columns). 
 
 Load:
