@@ -1,7 +1,4 @@
-# ZoomAttendance_Pipeline 
-Use Zoom Attendance Reports to (1) calculate the number of absences and (2) convert into format used for data visualizations (e.g., heatmap).
-
-Purpose of this analysis: Calculate each student's attendence for the entire semester. 
+Purpose of this analysis: Calculate student attendence recorded for an entire semester. Once processed, this data can be visualized in a BI tool (e.g., Tableau).
 The analysis will calculate the:
 * time (minutes) in attendance per lecture
 * total absences per semester
@@ -14,7 +11,7 @@ To obtain the Zoom Attendance Reports, having access to the API would streamline
 When Zoom attendance reports are downloaded (as CSV's), they are automatically saved under the Meeting ID. This analysis aggregates the csv's into a single entity, so there's no need to re-name the csv's.
 Important note on privacy: student names in the raw data were replaced with character names from the Avengers. 
 
-# Architecture: 
+Architecture 
 All CSV's must be saved in the same directory. Paste this path in the appropriate section in the jupyter notebook.
 
 E.g., in my case, I saved my csv's in the directory "RawCSVs". 
@@ -31,8 +28,8 @@ Transform:
 
 Load:
 * The dataframe is saved as a csv, which allows for downstream visualizations.
-* 
-## Visualization -
+
+## Visualization
 For my purposes, I used the output csv for Tableau to produce a heatmap (rows = student names, columns = lecture date, 'cells' show the time (minutes) students spent in each class).
 I find this visualization easy to interpret as you can easily see which students are absent each day throughout the entire semester.
 
