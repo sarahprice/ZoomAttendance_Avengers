@@ -1,26 +1,38 @@
-# ZoomAttendance_Pipeline for Avengers (student names are replaced with Avengers names for privacy purposes)
-Use Zoom Attendance Reports (CSVs) (from Canvas) to (1) calculate the number of absences and (2) convert into format used for visualizations (e.g., heatmap)
+# ZoomAttendance_Pipeline 
+Use Zoom Attendance Reports to (1) calculate the number of absences and (2) convert into format used for data visualizations (e.g., heatmap).
 
-The goal here is to produce an attendance report for the whole semester, 
--calculating the number of minutes each student attends per lecture, 
--calculating the number of days absent throughout the entire semester
+Purpose of this analysis: Calculate each student's attendence for the entire semester. 
+The analysis will calculate the:
+* time (minutes) in attendance per lecture
+* total absences per semester
 
-# Code takes input csv's and produce 1 aggregated output
 
-## Input-
-Downloaded Zoom Reports (CSV) are automatically saved under the same name - there is no need to re-name these since this code will aggregate the CSV's. 
+## Input
+# Raw data
+To obtain the Zoom Attendance Reports, having access to the API would streamline the export. However, the API was not accessable due to the permissions set by my organization. As a workaround, I downloaded reports directly from Zoom. 
 
-Important - all the CSV's should be saved in the same directory. The name of the directory name will be important to paste into this python aggregating script. 
-I created the directory "RawCSV's" to store my Zoom Reports. 
+When Zoom attendance reports are downloaded (as CSV's), they are automatically saved under the Meeting ID. This analysis aggregates the csv's into a single entity, so there's no need to re-name the csv's.
+Important note on privacy: student names in the raw data were replaced with character names from the Avengers. 
 
-## Output -
-All zoom reports into 1 wide CSV with names in the rows and the dates of attendance as the columns. 
-This output calculates the number of days absent.  
+# Architecture: 
+All CSV's must be saved in the same directory. Paste this path in the appropriate section in the jupyter notebook.
 
+E.g., in my case, I saved my csv's in the directory "RawCSVs". 
+
+## Extract/Transform/Load
+Extract: 
+* All csv's are pulled from the directory specified above.
+  
+Transform:
+* The Zoom reports are then aggregated into a single dataframe.
+* Attendance for each student is collapsed, having 1 student entry per day. If a student has multiple records in a single day, the time per session is summed to report the total minutes in attendance per day. If a student is not present during the day, the reported time is 0. 
+* To calculate total absences, the number of sessions with 0 minutes is considered an absence.
+* To measure the total number of absences for the entire semester, the number of absences is counted. The structure of this dataframe has student names (rows) and dates of attendance (columns). 
+
+Load:
+* The dataframe is saved as a csv, which allows for downstream visualizations.
+* 
 ## Visualization -
-The output can be used for data visualization purposes (e.g. Tableau). 
-Since the aggregates data are relatively clean, you may not have to do much downstream cleaning. 
-
-For my purposes here, I used the output CSV into Tableau to produce a heatmap (rows = student names, columns = lecture date, 'cells' show the time (minutes) students spent in each class).
-I find this visualization easy to interpret as you can easily see which students are absent each day. 
+For my purposes, I used the output csv for Tableau to produce a heatmap (rows = student names, columns = lecture date, 'cells' show the time (minutes) students spent in each class).
+I find this visualization easy to interpret as you can easily see which students are absent each day throughout the entire semester.
 
