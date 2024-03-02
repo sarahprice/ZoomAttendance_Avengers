@@ -8,7 +8,7 @@ The analysis will calculate the:
 
 
 ## Input
-# Raw data
+Raw data
 To obtain the Zoom Attendance Reports, having access to the API would streamline the export. However, the API was not accessable due to the permissions set by my organization. As a workaround, I downloaded reports directly from Zoom. 
 
 When Zoom attendance reports are downloaded (as CSV's), they are automatically saved under the Meeting ID. This analysis aggregates the csv's into a single entity, so there's no need to re-name the csv's.
