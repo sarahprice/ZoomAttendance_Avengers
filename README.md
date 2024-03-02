@@ -12,12 +12,12 @@ Raw data
 
 To obtain the Zoom Attendance Reports, having access to the API would streamline the export. However, the API was not accessable due to the permissions set by my organization. As a workaround, I downloaded reports directly from Zoom. 
 
-When Zoom attendance reports are downloaded (as CSV's), they are automatically saved under the Meeting ID. This analysis aggregates the csv's into a single entity, so there's no need to re-name the csv's.
-Important note on privacy: student names in the raw data were replaced with character names from the Avengers. 
+* When Zoom attendance reports are downloaded (as CSV's), they are automatically saved under the Meeting ID. This analysis aggregates the csv's into a single entity, so there's no need to re-name the csv's.
+* Important note on privacy: student names in the raw data were replaced with character names from the Avengers. 
 
 Architecture 
 
-All CSV's must be saved in the same directory. Paste this path in the appropriate section in the jupyter notebook.
+* All CSV's must be saved in the same directory. Paste this path in the appropriate section in the jupyter notebook.
 
 E.g., in my case, I saved my csv's in the directory "RawCSVs". 
 
