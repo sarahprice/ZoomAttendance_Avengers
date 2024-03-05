@@ -1,6 +1,6 @@
 # Student Zoom Attendence
 
-Purpose of this analysis: Calculate student attendence recorded for an entire semester. Once processed, this data can be visualized in a BI tool (e.g., Tableau).
+Purpose of this analysis: Calculate student attendence for an entire semester. Once processed, this data can be visualized in a BI tool (e.g., Tableau).
 
 The analysis will calculate the:
 * time (minutes) in attendance per lecture
